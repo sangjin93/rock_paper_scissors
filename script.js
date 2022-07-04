@@ -1,5 +1,6 @@
-function getRandomInt(num) {
-    const result = Math.floor(Math.random() * num);
+function computerPlay(num = 3) {
+    result = Math.floor(Math.random() * num);
+    
     if (result === 0) {
         console.log("Rock");
     }   else if (result === 1) {
@@ -9,4 +10,4 @@ function getRandomInt(num) {
     }
 }
 
-const computerPlay = getRandomInt (3);
+computerPlay();
