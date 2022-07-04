@@ -10,5 +10,3 @@ function getRandomInt(num) {
 }
 
 const computerPlay = getRandomInt (3);
-
-console.log(computerPlay);
