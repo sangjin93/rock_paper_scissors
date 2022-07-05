@@ -25,6 +25,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playRound = prompt ("Rock, Paper or Scissors?").toLowerCase();
+const playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase();
 
 const computerSelection = computerPlay();
