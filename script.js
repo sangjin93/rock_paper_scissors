@@ -1,3 +1,4 @@
+// Function that randomly determines the computer's play
 function computerPlay(num = 3) {
     result = Math.floor(Math.random() * num);
 
@@ -10,10 +11,12 @@ function computerPlay(num = 3) {
     }
 }
 
+// Declare initial values of each score (player, computer and when it's a tie)
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
+// Compares player's choice with computer's play, tallies score and returns a result
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
@@ -36,22 +39,22 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) { // Creates a loop of 5 games to play
 
-        playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase();
+        playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase(); // Prompt to start each game
 
-        const computerSelection = computerPlay(num = 3);
+        const computerSelection = computerPlay(num = 3); // Declare computerSelection
 
         console.log(playRound (playerSelection, computerSelection));
     }
 }
 
-console.log(game());
+console.log(game()); // Plays the loop
 
 console.log("Game over. Your final score is " +playerScore+ " wins, " +computerScore+ " losses and " 
-            +tieScore+ " draws.");
+            +tieScore+ " draws."); // Reports the scores
 
-function gameResult () {
+function gameResult () { // Compares scores and returns outcome
     
     if (playerScore > computerScore) {
         console.log("Congratulations! You won.");
