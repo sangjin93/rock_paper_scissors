@@ -41,9 +41,9 @@ function game() {
 
     for (let i = 0; i < 5; i++) { // Creates a loop of 5 games to play
 
-        playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase(); // Prompt to start each game
+        playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase(); 
 
-        const computerSelection = computerPlay(num = 3); // Declare computerSelection
+        const computerSelection = computerPlay(num = 3); 
 
         console.log(playRound (playerSelection, computerSelection));
     }
@@ -52,7 +52,7 @@ function game() {
 console.log(game()); // Plays the loop
 
 console.log("Game over. Your final score is " +playerScore+ " wins, " +computerScore+ " losses and " 
-            +tieScore+ " draws."); // Reports the scores
+            +tieScore+ " draws."); 
 
 function gameResult () { // Compares scores and returns outcome
     
