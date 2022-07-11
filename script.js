@@ -3,35 +3,36 @@ let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
 
-const rockButton = document.getElementById('rock');
+const rockButton = document.getElementById("rock");
     rockButton.addEventListener('click', () => {
         console.log("You chose rock");
-        let result = (playRound ("rock", computerPlay()));
+        result = (playRound("rock", computerPlay()));
     });
 
-const paperButton = document.getElementById('paper');
+const paperButton = document.getElementById("paper");
     paperButton.addEventListener('click', () => {
         console.log("You chose paper");
-        let result = (playRound ("paper", computerPlay()));
+        result = (playRound("paper", computerPlay()));
     });
 
-const scissorsButton = document.getElementById('scissors');
+const scissorsButton = document.getElementById("scissors");
     scissorsButton.addEventListener('click', () => {
         console.log("You chose scissors");
-        let result = (playRound ("scissors", computerPlay()));
+        result = (playRound("scissors", computerPlay()));
     });
 
 // Function that randomly determines the computer's play
-function computerPlay(num = 3) {
-    result = Math.floor(Math.random() * num);
+function computerPlay() {
+    result = Math.floor(Math.random() * 3);
 
     if (result === 0) {
-        return "rock";
+        computerSelection = "rock";
     }   else if (result === 1) {
-        return "paper";
+        computerSelection = "paper";
     }   else {
-        return "scissors";
+        computerSelection = "scissors";
     }
+    return computerSelection;
 }
 
 // Compares player's choice with computer's play, tallies score and returns a result
@@ -56,13 +57,8 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    
-    const computerSelection = computerPlay(num = 3); 
 
-    console.log(playRound (playerSelection, computerSelection));
 }
-
-console.log(game()); 
 
 console.log("Game over. Your final score is " +playerScore+ " wins, " +computerScore+ " losses and " 
             +tieScore+ " draws."); 
