@@ -1,3 +1,10 @@
+const buttons = document.querySelectorAll('.choice');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        return button.id;
+    });
+});
+
 // Function that randomly determines the computer's play
 function computerPlay(num = 3) {
     result = Math.floor(Math.random() * num);
