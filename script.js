@@ -1,9 +1,25 @@
-const buttons = document.querySelectorAll('.choice');
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        return button.id;
+// Declare initial values of each score (player, computer and when it's a tie)
+let playerScore = 0;
+let computerScore = 0;
+let tieScore = 0;
+
+const rockButton = document.getElementById('rock');
+    rockButton.addEventListener('click', () => {
+        console.log("You chose rock");
+        let result = (playRound ("rock", computerPlay()));
     });
-});
+
+const paperButton = document.getElementById('paper');
+    paperButton.addEventListener('click', () => {
+        console.log("You chose paper");
+        let result = (playRound ("paper", computerPlay()));
+    });
+
+const scissorsButton = document.getElementById('scissors');
+    scissorsButton.addEventListener('click', () => {
+        console.log("You chose scissors");
+        let result = (playRound ("scissors", computerPlay()));
+    });
 
 // Function that randomly determines the computer's play
 function computerPlay(num = 3) {
@@ -17,11 +33,6 @@ function computerPlay(num = 3) {
         return "scissors";
     }
 }
-
-// Declare initial values of each score (player, computer and when it's a tie)
-let playerScore = 0;
-let computerScore = 0;
-let tieScore = 0;
 
 // Compares player's choice with computer's play, tallies score and returns a result
 function playRound(playerSelection, computerSelection) {
@@ -45,26 +56,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-
+    
     const computerSelection = computerPlay(num = 3); 
 
     console.log(playRound (playerSelection, computerSelection));
 }
 
-console.log(game()); // Plays the loop
+console.log(game()); 
 
 console.log("Game over. Your final score is " +playerScore+ " wins, " +computerScore+ " losses and " 
             +tieScore+ " draws."); 
 
 function gameResult () { // Compares scores and returns outcome
     
-    if (playerScore > computerScore) {
+    if (playerScore === 5) {
         console.log("Congratulations! You won.");
-    }   else if (playerScore === computerScore) {
+    }   else if (playerScore && computerScore === 5) {
         console.log("It's a tie.");
-    }   else {
+    }   else (computerScore === 5) 
         console.log("You lost.");
-    }
 }
 
 gameResult();
