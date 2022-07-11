@@ -46,14 +46,9 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    for (let i = 0; i < 5; i++) { // Creates a loop of 5 games to play
+    const computerSelection = computerPlay(num = 3); 
 
-        playerSelection = prompt ("Rock, Paper or Scissors?").toLowerCase(); 
-
-        const computerSelection = computerPlay(num = 3); 
-
-        console.log(playRound (playerSelection, computerSelection));
-    }
+    console.log(playRound (playerSelection, computerSelection));
 }
 
 console.log(game()); // Plays the loop
