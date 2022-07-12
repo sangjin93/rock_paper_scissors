@@ -2,6 +2,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
+let resultText = document.getElementById('matchResult');
     
 // Function that randomly determines the computer's play
 function computerPlay() {
@@ -21,19 +22,23 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
         tieScore++;
-        return `It's a tie! You both picked ${playerSelection}`;
+        resultText.textContent = ("This match was a tie.");
     }   else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
-        return "You win! Rock beats Scissors";
+        playerCounter.textContent = playerScore;
+        resultText.textContent = ("You win! Rock beats " + computerSelection + '.');
     }   else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
-        return "You win! Paper beats Rock";
+        playerCounter.textContent = playerScore;
+        resultText.textContent = ("You win! Paper beats " + computerSelection + '.');
     }   else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
-        return "You win! Scissors beats Paper";
+        playerCounter.textContent = playerScore;
+        resultText.textContent = ("You win! Scissors beats " + computerSelection + '.');
     }   else {
         computerScore++;
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        computerCounter.textContent = computerScore;
+        resultText.textContent = ("You lose. " + computerSelection +  " beats " + playerSelection + "."); 
     }
 }
 
