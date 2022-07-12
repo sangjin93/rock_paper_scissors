@@ -23,11 +23,11 @@ const scissorsButton = document.getElementById("scissors");
 
 // Function that randomly determines the computer's play
 function computerPlay() {
-    result = Math.floor(Math.random() * 3);
+    let selector = Math.floor(Math.random() * 3);
 
-    if (result === 0) {
+    if (selector === 0) {
         computerSelection = "rock";
-    }   else if (result === 1) {
+    }   else if (selector === 1) {
         computerSelection = "paper";
     }   else {
         computerSelection = "scissors";
@@ -56,21 +56,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-
-}
-
-console.log("Game over. Your final score is " +playerScore+ " wins, " +computerScore+ " losses and " 
-            +tieScore+ " draws."); 
-
 function gameResult () { // Compares scores and returns outcome
     
     if (playerScore === 5) {
         console.log("Congratulations! You won.");
     }   else if (playerScore && computerScore === 5) {
         console.log("It's a tie.");
-    }   else (computerScore === 5) 
-        console.log("You lost.");
+    }   else if (computerScore === 5) {
+        console.log("You lost. Computer wins!");
+    }   else {
+        console.log("");
+    }
 }
 
 gameResult();
