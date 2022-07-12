@@ -1,7 +1,6 @@
 // Declare initial values of each score (player, computer and when it's a tie)
 let playerScore = 0;
 let computerScore = 0;
-let tieScore = 0;
 let resultText = document.getElementById('matchResult');
     
 // Function that randomly determines the computer's play
@@ -21,7 +20,6 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        tieScore++;
         resultText.textContent = ("This match was a tie.");
     }   else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
@@ -45,14 +43,10 @@ function playRound(playerSelection, computerSelection) {
 function gameResult () { // Compares scores and returns outcome
     
     if (playerScore === 5) {
-        console.log("Congratulations! You won.");
-    }   else if (playerScore && computerScore === 5) {
-        console.log("It's a tie.");
+        resultText.textContent = ("Congrats! You won 5 games before the computer!");
     }   else if (computerScore === 5) {
-        console.log("You lost. Computer wins!");
-    }   else {
-        console.log("");
-    }
+        resultText.textContent = ("Sorry, you lost. The computer won 5 games before you.");
+    }   
 }
 
 const rockButton = document.getElementById("rock");
