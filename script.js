@@ -2,29 +2,10 @@
 let playerScore = 0;
 let computerScore = 0;
 let tieScore = 0;
-
-const rockButton = document.getElementById("rock");
-    rockButton.addEventListener('click', () => {
-        console.log("You chose rock");
-        result = (playRound("rock", computerPlay()));
-    });
-
-const paperButton = document.getElementById("paper");
-    paperButton.addEventListener('click', () => {
-        console.log("You chose paper");
-        result = (playRound("paper", computerPlay()));
-    });
-
-const scissorsButton = document.getElementById("scissors");
-    scissorsButton.addEventListener('click', () => {
-        console.log("You chose scissors");
-        result = (playRound("scissors", computerPlay()));
-    });
-
+    
 // Function that randomly determines the computer's play
 function computerPlay() {
     let selector = Math.floor(Math.random() * 3);
-
     if (selector === 0) {
         computerSelection = "rock";
     }   else if (selector === 1) {
@@ -69,4 +50,20 @@ function gameResult () { // Compares scores and returns outcome
     }
 }
 
-gameResult();
+const rockButton = document.getElementById("rock");
+    rockButton.addEventListener('click', () => {
+        console.log("You chose rock");
+        playRound ("rock", computerPlay());
+    });
+
+const paperButton = document.getElementById("paper");
+    paperButton.addEventListener('click', () => {
+        console.log("You chose paper");
+        playRound ("paper", computerPlay());
+    });
+
+const scissorsButton = document.getElementById("scissors");
+    scissorsButton.addEventListener('click', () => {
+        console.log("You chose scissors");
+        playRound ("scissors", computerPlay());
+    });
