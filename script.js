@@ -38,6 +38,7 @@ function playRound(playerSelection, computerSelection) {
         computerCounter.textContent = computerScore;
         resultText.textContent = ("You lose. " + computerSelection +  " beats " + playerSelection + "."); 
     }
+    return gameResult();
 }
 
 function gameResult () { // Compares scores and returns outcome
