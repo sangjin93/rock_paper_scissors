@@ -36,7 +36,8 @@ function playRound(playerSelection, computerSelection) {
     }   else {
         computerScore++;
         computerCounter.textContent = computerScore;
-        resultText.textContent = ("You lose. " + computerSelection +  " beats " + playerSelection + "."); 
+        resultText.textContent = ("You lose. " + computerSelection[0].toUpperCase() + computerSelection.slice(1) +  
+        " beats " + playerSelection + "."); 
     }
     return gameResult();
 }
